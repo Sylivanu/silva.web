@@ -101,38 +101,40 @@
   </div>
 
   <script>
-    // GitHub API
-    const githubApi = 'https://api.github.com';
-    const clientId = 'YOUR_GITHUB_CLIENT_ID';
-    const clientSecret = 'YOUR_GITHUB_CLIENT_SECRET';
+   // GitHub API
+const githubApi = 'https://api.github.com';
+const clientId = 'YOUR_GITHUB_CLIENT_ID';
+const clientSecret = 'YOUR_GITHUB_CLIENT_SECRET';
 
-    // Google API
-    const googleApi = 'https://accounts.google.com';
-    const googleClientId = 'YOUR_GOOGLE_CLIENT_ID';
-    const googleClientSecret = 'YOUR_GOOGLE_CLIENT_SECRET';
+// Google API
+const googleApi = 'https://accounts.google.com';
+const googleClientId = 'YOUR_GOOGLE_CLIENT_ID';
+const googleClientSecret = 'YOUR_GOOGLE_CLIENT_SECRET';
 
-    // Login with GitHub
-    document.querySelector('.btn-github').addEventListener('click', () => {
-      const authUrl = `${githubApi}/login/oauth/authorize?client_id=${clientId}&redirect_uri=http://localhost:3000/callback&scope=user`;
-      window.location.href = authUrl;
-    });
+// Login with GitHub
+document.querySelector('.btn-github').addEventListener('click', () => {
+  const authUrl = `${githubApi}/login/oauth/authorize?client_id=${clientId}&redirect_uri=http://localhost:3000/callback&scope=user`;
+  window.location.href = authUrl;
+});
 
-    // Login with Google
-    document.querySelector('.btn-google').addEventListener('click', () => {
-      const authUrl = `${googleApi}/o/oauth2/auth?client_id=${googleClientId}&redirect_uri=http://localhost:3000/callback&scope=openid%20email%20profile&response_type=code`;
-      window.location.href = authUrl;
-    });
+// Login with Google
+document.querySelector('.btn-google').addEventListener('click', () => {
+  const authUrl = `${googleApi}/o/oauth2/auth?client_id=${googleClientId}&redirect_uri=http://localhost:3000/callback&scope=openid%20email%20profile&response_type=code`;
+  window.location.href = authUrl;
+});
 
-    // Callback function for GitHub and Google APIs
-    function callback(code) {
-      // Exchange authorization code for access token
-      const tokenUrl = `${githubApi}/login/oauth/access_token?client_id=${clientId}&client_secret=${clientSecret}&code=${code}`;
-      fetch(tokenUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    .then(response => response.json())
-    .then(data => {
-        const accessToken = data.access
+// Callback function for GitHub and Google APIs
+function callback(code) {
+  // Exchange authorization code for access token
+  const tokenUrl = `${githubApi}/login/oauth/access_token?client_id=${clientId}&client_secret=${clientSecret}&code=${code}`;
+  fetch(tokenUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+ .then(response => response.json())
+ .then(data => {
+    const accessToken = data.access_token;
+    // Use access token to authenticate user
+   </script>
