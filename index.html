@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navbar 1</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
-    <link href="./styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="background"></div>
-    <button class="navbar-burger" onclick="toggleMenu()"></button>
-    <div class="menu">
-      <nav>
-        <a href="#" style="animation-delay: 0.1s">About</a>
-        <a href="#" style="animation-delay: 0.2s">Portfolio</a>
-        <a href="#" style="animation-delay: 0.3s">Services</a>
-        <a href="#" style="animation-delay: 0.5s">Contact</a>
-      </nav>
-    </div>
-    <script type="text/javascript">
-      const toggleMenu = () => {
-        document.body.classList.toggle("open");
-      };
-    </script>
-  </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silva Tech - Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="blog-posts">
+            <h1>Latest Blog Posts</h1>
+            <div class="post-slider">
+                <div class="post-slide">
+                    <h2>Post 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="post-slide">
+                    <h2>Post 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="post-slide">
+                    <h2>Post 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <!-- Add more post slides here -->
+            </div>
+        </section>
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 2</a></li>
+                <li><a href="#">Category 3</a></li>
+                <!-- Add more categories here -->
+            </ul>
+            <h2>Recent Posts</h2>
+            <ul>
+                <li><a href="#">Post 1</a></li>
+                <li><a href="#">Post 2</a></li>
+                <li><a href="#">Post 3</a></li>
+                <!-- Add more recent posts here -->
+            </ul>
+        </aside>
+    </main>
+    <script src="script.js"></script>
+</body>
+  </html>
